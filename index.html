@@ -6,26 +6,33 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Vue Practice</title>
 		<script src="https://unpkg.com/vue@3"></script>
-    <link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-    <div id="app">
-      <button @click="toggleShowBooks">
-        <span v-if="showBooks">Hide books</span>
-        <span v-else>Show books</span>
-      </button>
+		<div id="app">
+			<button @click="toggleShowBooks">
+				<span v-if="showBooks">Hide books</span>
+				<span v-else>Show books</span>
+			</button>
 			<div v-if="showBooks">
-        <h1 v-if="showBooks">Books List</h1>
-				<p>{{title}} - {{author}}, {{releaseYear}} - Rating: {{rating}}</p>
-				<button @click="increaseRating">Increase rating</button>
-				<button @click="decreaseRating">Decrease rating</button>
+				<h1 v-if="showBooks">Books List</h1>
+				<ul>
+					<li v-for="book in books">
+						<h3>{{ book.title }}</h3>
+						<h4>{{ book.author }}</h4>
+						<p>{{ book.releaseYear }}</p>
+						<p>Rating: {{ book.rating }}/10</p>
+            <button class="rating-btn" @click="decreaseRating(book)">-</button>
+            <button class="rating-btn" @click="increaseRating(book)">+</button>
+					</li>
+				</ul>
 			</div>
-      <div class="box" @mouseover="handleMouseOver">mouseover</div>
-      <div class="box" @mouseleave="handleMouseLeave">mouseleave</div>
-      <div class="box" @dblclick="handleDoubleClick">doubleclick</div>
-      <div class="box" @mousemove="handleMouseMove">
-        <p>mouse position - x: {{x}}, y: {{y}}</p>
-      </div>
+			<div class="box" @mouseover="handleMouseOver">mouseover</div>
+			<div class="box" @mouseleave="handleMouseLeave">mouseleave</div>
+			<div class="box" @dblclick="handleDoubleClick">doubleclick</div>
+			<div class="box" @mousemove="handleMouseMove">
+				mouse position - x: {{x}}, y: {{y}}
+			</div>
 		</div>
 		<script src="./app.js"></script>
 	</body>

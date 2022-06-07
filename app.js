@@ -2,22 +2,56 @@ const app = Vue.createApp({
   data() {
     return {
       showBooks: true,
-      title: 'The Silence Of The Lambs',
-      author: 'Thomas Harris',
-      releaseYear: 1991,
-      rating: 5,
       x: 0,
-      y: 0
+      y: 0,
+      books: [
+        {
+          title: 'The Silence Of The Lambs',
+          author: 'Thomas Harris',
+          releaseYear: 1991,
+          rating: 5
+        },
+        {
+          title: 'The Davinci Code',
+          author: 'Dan Brown',
+          releaseYear: 2003,
+          rating: 5
+        },
+        {
+          title: 'Steve Jobs',
+          author: 'Walter Isaacson',
+          releaseYear: 2011,
+          rating: 5
+        },
+        {
+          title: 'Atomic Habits',
+          author: 'James Clear',
+          releaseYear: 2018,
+          rating: 5
+        },
+        {
+          title: 'The Hunt for Red October',
+          author: 'Tom Clancy',
+          releaseYear: 1984,
+          rating: 5
+        },
+        {
+          title: 'Mindset',
+          author: 'Carol S. Dweck, Ph.D.',
+          releaseYear: 2006,
+          rating: 5
+        }
+      ]
     }
   },
   methods: {
-    increaseRating() {
-      if (this.rating === 10) return
-      else this.rating++
+    increaseRating(book) {
+      if (book.rating === 10) return
+      else book.rating++
     },
-    decreaseRating() {
-      if (this.rating === 1) return
-      else this.rating--
+    decreaseRating(book) {
+      if (book.rating === 1) return
+      else book.rating--
     },
     toggleShowBooks() {
       this.showBooks = !this.showBooks
