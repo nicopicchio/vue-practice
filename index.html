@@ -6,18 +6,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Vue Practice</title>
 		<script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="style.css">
 	</head>
 	<body>
     <div id="app">
       <button @click="toggleShowBooks">
         <span v-if="showBooks">Hide books</span>
-        <span v-if="!showBooks">Show books</span>
+        <span v-else>Show books</span>
       </button>
 			<div v-if="showBooks">
+        <h1 v-if="showBooks">Books List</h1>
 				<p>{{title}} - {{author}}, {{releaseYear}} - Rating: {{rating}}</p>
 				<button @click="increaseRating">Increase rating</button>
 				<button @click="decreaseRating">Decrease rating</button>
 			</div>
+      <div class="box" @mouseover="handleMouseOver">mouseover</div>
+      <div class="box" @mouseleave="handleMouseLeave">mouseleave</div>
+      <div class="box" @dblclick="handleDoubleClick">doubleclick</div>
+      <div class="box" @mousemove="handleMouseMove">
+        <p>mouse position - x: {{x}}, y: {{y}}</p>
+      </div>
 		</div>
 		<script src="./app.js"></script>
 	</body>
