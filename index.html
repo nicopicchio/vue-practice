@@ -8,10 +8,17 @@
 		<script src="https://unpkg.com/vue@3"></script>
 	</head>
 	<body>
-		<h1>Hello World :)</h1>
-		<div id="app">
-      
-    </div>
+    <div id="app">
+      <button @click="toggleShowBooks">
+        <span v-if="showBooks">Hide books</span>
+        <span v-if="!showBooks">Show books</span>
+      </button>
+			<div v-if="showBooks">
+				<p>{{title}} - {{author}}, {{releaseYear}} - Rating: {{rating}}</p>
+				<button @click="increaseRating">Increase rating</button>
+				<button @click="decreaseRating">Decrease rating</button>
+			</div>
+		</div>
 		<script src="./app.js"></script>
 	</body>
 </html>
