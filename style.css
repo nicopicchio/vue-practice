@@ -1,3 +1,8 @@
+* {
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .box {
   padding: 100px 0;
   width: 400px;
@@ -8,7 +13,8 @@
 }
 
 .rating-btn,
-.book-item {
+.book-item,
+.rating-text {
   display: inline;
 }
 
