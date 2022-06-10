@@ -71,6 +71,14 @@ const app = Vue.createApp({
     toggleIsRead(book) {
       book.isRead = !book.isRead
     }
+  },
+  computed: {
+    filterReadBooks() {
+      return this.books.filter(book => book.isRead)
+    },
+    filterUnreadBooks() {
+      return this.books.filter(book => !book.isRead)
+    }
   }
 })
 

@@ -14,13 +14,15 @@
 				<span v-if="showBooks">Hide books</span>
 				<span v-else>Show books</span>
 			</button>
+			<button class="show-hide-btn" @click="filterReadBooks">Show read</button>
+			<button class="show-hide-btn" @click="filterUnreadBooks">Show unread</button>
 			<div v-if="showBooks">
 				<h1 v-if="showBooks">Books List</h1>
 				<ul>
 					<li class="book-card" :class="{ isRead: book.isRead }" v-for="book in books" @dblclick="toggleIsRead(book)">
 						<h2 class="book-title">{{ book.title }}</h2>
 						<h3 class="book-author">by {{ book.author }}</h3>
-						<a class="amazon-link" :href="book.amazonLink">Buy on Amazon</a>
+						<a class="amazon-link" :href="book.amazonLink" target="_blank">Buy on Amazon</a>
 						<div>
 							<p class="rating-text">Rating: {{ book.rating }}/10</p>
 							<button class="rating-btn" @click="decreaseRating(book)">
