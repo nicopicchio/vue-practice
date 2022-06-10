@@ -17,13 +17,19 @@
 			<div v-if="showBooks">
 				<h1 v-if="showBooks">Books List</h1>
 				<ul>
-					<li v-for="book in books">
-						<h2>{{ book.title }}</h2>
-						<h3>by {{ book.author }}</h3>
+					<li class="book-card" v-for="book in books">
+						<h2 class="book-title">{{ book.title }}</h2>
+						<h3 class="book-author">by {{ book.author }}</h3>
 						<a class="amazon-link" :href="book.amazonLink">Buy on Amazon</a>
-						<p class="rating-text">Rating: {{ book.rating }}/10</p>
-            <button class="rating-btn" @click="decreaseRating(book)">-</button>
-            <button class="rating-btn" @click="increaseRating(book)">+</button>
+						<div>
+							<p class="rating-text">Rating: {{ book.rating }}/10</p>
+							<button class="rating-btn" @click="decreaseRating(book)">
+								-
+							</button>
+							<button class="rating-btn" @click="increaseRating(book)">
+								+
+							</button>
+						</div>
 					</li>
 				</ul>
 			</div>
