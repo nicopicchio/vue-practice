@@ -17,7 +17,7 @@
 			<div v-if="showBooks">
 				<h1 v-if="showBooks">Books List</h1>
 				<ul>
-					<li class="book-card" v-for="book in books">
+					<li class="book-card" :class="{ isRead: book.isRead }" v-for="book in books" @dblclick="toggleIsRead(book)">
 						<h2 class="book-title">{{ book.title }}</h2>
 						<h3 class="book-author">by {{ book.author }}</h3>
 						<a class="amazon-link" :href="book.amazonLink">Buy on Amazon</a>
@@ -32,12 +32,6 @@
 						</div>
 					</li>
 				</ul>
-			</div>
-			<div class="box" @mouseover="handleMouseOver">mouseover</div>
-			<div class="box" @mouseleave="handleMouseLeave">mouseleave</div>
-			<div class="box" @dblclick="handleDoubleClick">doubleclick</div>
-			<div class="box" @mousemove="handleMouseMove">
-				mouse position - x: {{x}}, y: {{y}}
 			</div>
 		</div>
 		<script src="./app.js"></script>

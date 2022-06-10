@@ -54,3 +54,7 @@ h1 {
   text-align: center;
   margin: 1rem auto;
 }
+
+.isRead {
+  background: rgb(90, 226, 90);
+}
