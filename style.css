@@ -18,8 +18,13 @@
   display: inline;
 }
 
-.show-hide-btn {
+.show-hide-btn,
+.amazon-link {
   display: block;
+}
+
+.amazon-link {
+  padding: 1rem 0;
 }
 
 .rating-btn {

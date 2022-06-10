@@ -20,7 +20,7 @@
 					<li v-for="book in books">
 						<h2>{{ book.title }}</h2>
 						<h3>by {{ book.author }}</h3>
-						<p>Released: {{ book.releaseYear }}</p>
+						<a class="amazon-link" :href="book.amazonLink">Buy on Amazon</a>
 						<p class="rating-text">Rating: {{ book.rating }}/10</p>
             <button class="rating-btn" @click="decreaseRating(book)">-</button>
             <button class="rating-btn" @click="increaseRating(book)">+</button>
